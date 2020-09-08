@@ -1,14 +1,17 @@
 #!/bin/bash
 VOLUME="volMPD"
-GDML_SHORT="nd_hall_only_mpd_antifid"
-GEO="/pnfs/dune/persistent/users/mtanaz/test_8/${GDML_SHORT}.gdml"
+#change gdml file name as needed
+GDML_SHORT="nd_hall_only_lar"
+#change the path of the gdml file as needed
+GEO="${GDML_SHORT}.gdml"
 MODE="neutrino"
 POT=7.5e13
 NEVENTS=100
 ProcId=$1
 LOC="DUNE_ND_HALL"
 FLUXFILES="/pnfs/dune/persistent/users/mtanaz/gsimple_subdetectors/neutrino/gsimple*.root"
-FINAL_DEST="/pnfs/dune/persistent/users/mtanaz/test_8/production"
+#change the final destination as needed
+FINAL_DEST="/pnfs/dune/persistent/users/mtanaz/production"
 
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 
