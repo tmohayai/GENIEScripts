@@ -1,5 +1,6 @@
 #!/bin/bash
-VOLUME="volMPD"
+#change the top volume as needed
+VOLUME="volArgonCubeActive"
 #change gdml file name as needed
 GDML_SHORT="nd_hall_only_lar"
 #change the path of the gdml file as needed
