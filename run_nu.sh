@@ -1,3 +1,7 @@
+# Before running this script copy the desired geometry file to your working area; for a list of geometries visit: 
+# https://cdcvs.fnal.gov/redmine/attachments/61423/nd_hall_geometries_20_10_20.tar.gz
+# Once you downloaded the desired geometry/gdml file, make sure you change the "GEOMETRY" and "TOPVOL" to the appropriate arguments. 
+# GEOMETRY is set to nd_hall_mpd_only, by default. That corresponds to nd_hall_mpd_only.gdml file. TOPVOL volGasTPC is the gas TPC only portion of ND_GAr.
 #! /usr/bin/env bash
 
 ####################
@@ -7,6 +11,8 @@ NPER=$2
 FIRST=$3
 TEST=$4
 
+# GENIE gevgen_fnal app requires the user to input the neutrino running mode; FHC is forward horn current for neutrino running mode and RHC is 
+# reverse horn current for anti-neutrino running mode
 if [ "${HORN}" != "FHC" ] && [ "${HORN}" != "RHC" ]; then
     echo "Invalid beam mode ${HORN}"
     echo "Must be FHC or RHC"
@@ -39,19 +45,17 @@ echo "Running gevgen for ${NPER} events in ${HORN} mode"
 RNDSEED=$((${PROCESS}+${FIRST}))
 #NEVENTS="-n ${NPER}"      # No. of events, -e XE16 for POT
 
-GEOMETRY="nd_hall_only_kloe"
-TOPVOL="volMainDet_3DST"
+#
+GEOMETRY="nd_hall_mpd_only" 
+TOPVOL="volTPCGas"
 SPOT=10
-#SEEDING=$(($RANDOM%$SPOT+314159*$PROCESS ))
-#NEVENTS="-e 5E16"
 NEVENTS="-n 200"
-#NEVENTS = 200
 PROD="PROD1"
 
-USERDIR="/pnfs/dune/persistent/users/mtanaz/test_12"
-OUTDIR="/pnfs/dune/persistent/users/mtanaz/test_12"
+# note: change the output path to point to your working area 
+OUTDIR="/pnfs/dune/persistent/users/mtanaz/"
 
-OUTFLAG="3DST"
+OUTFLAG="GasTPC"
 
 ####################
 
@@ -68,6 +72,8 @@ setup ifdhc
 ####################
 
 ## Run GENIE 
+
+# For more information on gevgen_fnal, visit: https://cdcvs.fnal.gov/redmine/projects/genie/wiki/Running_gevgen_fnal
 
 export GXMLPATH=${PWD}:${GXMLPATH}
 export GNUMIXML="GNuMIFlux_DUNE_ND.xml"
