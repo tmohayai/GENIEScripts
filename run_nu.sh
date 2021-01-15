@@ -1,7 +1,8 @@
 # Before running this script copy the desired geometry file to your working area; for a list of geometries visit: 
 # https://cdcvs.fnal.gov/redmine/attachments/61423/nd_hall_geometries_20_10_20.tar.gz
 # Once you downloaded the desired geometry/gdml file, make sure you change the "GEOMETRY" and "TOPVOL" to the appropriate arguments. 
-# GEOMETRY is set to nd_hall_mpd_only, by default. That corresponds to nd_hall_mpd_only.gdml file. TOPVOL volGasTPC is the gas TPC only portion of ND_GAr.
+# GEOMETRY is set to nd_hall_mpd_only, by default. That corresponds to nd_hall_mpd_only.gdml file and is the geometry for only an ND-GAr in the near detector hall.
+# TOPVOL volGasTPC is the gas TPC only portion of ND_GAr.
 #! /usr/bin/env bash
 
 ####################
