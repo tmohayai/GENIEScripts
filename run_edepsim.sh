@@ -1,5 +1,8 @@
 #!/bin/bash
 #source /grid/fermiapp/products/dune/setup_dune.sh
+
+#set ups
+
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 setup cmake v3_9_0
 
