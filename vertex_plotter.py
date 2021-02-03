@@ -33,7 +33,7 @@ c.Print("xy.png")
 c_2 = ROOT.TCanvas()
 hist_xz.Draw('colz')
 hist_xz.SetStats(0);
-c_2.Print("xz_2.png")
+c_2.Print("xz.png")
 
 c_3 = ROOT.TCanvas()
 hist_yz.Draw("colz");
