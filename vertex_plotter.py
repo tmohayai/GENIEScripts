@@ -1,9 +1,14 @@
+# quick validation script for genie ghep files after their conversion to gst format
+# coordinate limits in the histogram are based on ND-GAr fiducial volume; change them, as needed. 
+
 import ROOT
 import os.path
 
 hist_xy = ROOT.TH2D("xy",";x [m]; y [m]",100,-4.2,4.2,100,-5.5,2.5)
 hist_xz = ROOT.TH2D("xz",";z [m]; y [m]",100,10.0,19.0,100,-4.2,4.2)
 hist_yz = ROOT.TH2D("yz",";z [m]; y [m]",100,10.0,19.0,100,-5.2,2.2) 
+
+# change the upper limit of the loop variable i, as needed
 
 for i in range(1,101):
         f = ROOT.TFile.Open("neutrino."+str(i)+".gst.root")
